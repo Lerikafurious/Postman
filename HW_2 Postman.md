@@ -2,6 +2,7 @@ HW_2 Postman
 
 http://162.55.220.72:5005/first	
 1. Отправить запрос.
+![image](https://user-images.githubusercontent.com/83454778/168448909-09ca27d5-c073-4168-b9aa-3bed139fc57c.png)
 
 2. Статус код 200
 3. Проверить, что в body приходит правильный string.
