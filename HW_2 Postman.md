@@ -173,15 +173,19 @@ http://162.55.220.72:5005/object_info_4
 ![image](https://user-images.githubusercontent.com/83454778/168451119-cc3b307d-1b9e-4975-8192-bde3bbc2903f.png)
 
 18. Передать в окружение переменную name
+
   pm.environment.set("name", query.name);
 19. Передать в окружение переменную age
+
   pm.environment.set("age", query.age);
 20. Передать в окружение переменную salary
+
   pm.environment.set("salary", query.salary);
 
 ![image](https://user-images.githubusercontent.com/83454778/168451343-d5acdc33-a750-41ae-9e79-e4e24024f777.png)
 
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
+
   jsonData.salary.forEach(item => console.log(item))
 
 http://162.55.220.72:5005/user_info_2
@@ -197,8 +201,10 @@ http://162.55.220.72:5005/user_info_2
 ![image](https://user-images.githubusercontent.com/83454778/168451454-73a526c1-64dd-4c49-8d18-bb2db4da22ff.png)
 
 6. Спарсить response body в json.
+
   let jsonData = pm.response.json();
 7. Спарсить request.
+
   let query = request.data
 8. Проверить, что json response имеет параметр start_qa_salary
 
