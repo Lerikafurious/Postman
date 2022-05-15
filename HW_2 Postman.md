@@ -22,7 +22,7 @@ http://162.55.220.72:5005/user_info_3
 
 3. Спарсить response body в json
 
-![image](https://user-images.githubusercontent.com/83454778/168449179-f0790c5a-6960-417c-bcdd-a8778fb6d2c5.png?raw=true)
+      let jsonData = pm.response.json();
 
 4. Проверить, что name в ответе равно name s request (name вбить руками.)
 
@@ -38,7 +38,7 @@ http://162.55.220.72:5005/user_info_3
 
 7. Спарсить request.
 
-![image](https://user-images.githubusercontent.com/83454778/168449483-80b908b2-ea29-4863-872a-ead999aa114a.png?raw=true)
+      let  req = request.data
 
 8. Проверить, что name в ответе равно name s request (name забрать из request.)
 
@@ -54,7 +54,7 @@ http://162.55.220.72:5005/user_info_3
 
 11. Вывести в консоль параметр family из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168449720-5034f8bf-b0e7-4c65-b052-4e98792794d4.png?raw=true)
+      console.log(jsonData.family)
 
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
 
@@ -71,11 +71,12 @@ http://162.55.220.72:5005/object_info_3
 
 3. Спарсить response body в json.
 
-![image](https://user-images.githubusercontent.com/83454778/168449848-f9daf27e-69f1-45fe-80ad-e05eb97b0c6b.png?raw=true)
+      let jsonData = pm.response.json();
 
 4. Спарсить request.
 
-![image](https://user-images.githubusercontent.com/83454778/168450363-a9234244-b860-4455-aa99-f1fa463eb5ee.png?raw=true)
+      let query = {};
+      pm.request.url.query.all().forEach((param) => { query[param.key] = param.value});
 
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
 
@@ -91,7 +92,7 @@ http://162.55.220.72:5005/object_info_3
 
 8. Вывести в консоль параметр family из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168450447-8c3a0abe-13e6-4e8a-942c-3de03b43a708.png?raw=true)
+      console.log(jsonData.family)
 
 9. Проверить, что у параметра dog есть параметры name.
 
@@ -120,11 +121,12 @@ http://162.55.220.72:5005/object_info_4
 
 3. Спарсить response body в json.
 
-![image](https://user-images.githubusercontent.com/83454778/168450792-b32ced72-10b1-4ff9-94ef-1b00d3843d54.png)
+      let jsonData = pm.response.json();
 
 4. Спарсить request.
 
-![image](https://user-images.githubusercontent.com/83454778/168450796-d1c2b942-790c-4884-a4d9-3d19ba3f450b.png)
+      let query = {};
+      pm.request.url.query.all().forEach((param) => { query[param.key] = param.value});
 
 5. Проверить, что name в ответе равно name s request (name забрать из request.)
 
@@ -136,23 +138,23 @@ http://162.55.220.72:5005/object_info_4
 
 7. Вывести в консоль параметр salary из request.
 
-![image](https://user-images.githubusercontent.com/83454778/168450901-f2f9250a-9c01-4b75-9ad5-7afd5e96f835.png)
+      console.log(query.salary)
 
 8. Вывести в консоль параметр salary из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168450912-1f6af07f-0e92-4122-af45-48e27c7388fa.png)
+      console.log(jsonData.salary)
 
 9. Вывести в консоль 0-й элемент параметра salary из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168451012-5c99da9d-e311-4c63-b7f5-2cd3c67fc92b.png)
-
+      console.log(jsonData.salary[0])
+      
 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168451029-b5b6cdc0-3217-4596-889d-17aa3221824c.png)
+      console.log(jsonData.salary[1])
 
 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
 
-![image](https://user-images.githubusercontent.com/83454778/168451033-e61e4fea-2542-43d4-a2da-0934efa5a8e9.png)
+      console.log(jsonData.salary[2])
 
 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
 
@@ -174,21 +176,21 @@ http://162.55.220.72:5005/object_info_4
 
 18. Передать в окружение переменную name
 
-  pm.environment.set("name", query.name);
+      pm.environment.set("name", query.name);
 
 19. Передать в окружение переменную age
 
-  pm.environment.set("age", query.age);
+      pm.environment.set("age", query.age);
   
 20. Передать в окружение переменную salary
 
-  pm.environment.set("salary", query.salary);
+      pm.environment.set("salary", query.salary);
 
 ![image](https://user-images.githubusercontent.com/83454778/168451343-d5acdc33-a750-41ae-9e79-e4e24024f777.png)
 
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
 
-  jsonData.salary.forEach(item => console.log(item))
+      jsonData.salary.forEach(item => console.log(item))
 
 http://162.55.220.72:5005/user_info_2
 1. Вставить параметр salary из окружения в request
@@ -204,11 +206,11 @@ http://162.55.220.72:5005/user_info_2
 
 6. Спарсить response body в json.
 
-  let jsonData = pm.response.json();
+      let jsonData = pm.response.json();
   
 7. Спарсить request.
 
-  let query = request.data
+      let query = request.data
   
 8. Проверить, что json response имеет параметр start_qa_salary
 
@@ -267,3 +269,12 @@ http://162.55.220.72:5005/user_info_2
 ![image](https://user-images.githubusercontent.com/83454778/168451930-e9329470-dac5-4c60-8fc7-1fd45a24cf25.png)
 
 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.
+
+        for (let item in jsonData.person) {
+          if(jsonData.person.hasOwnProperty(item)){
+            console.log(item)
+          }
+        }
+    
+ ![image](https://user-images.githubusercontent.com/83454778/168462804-ebde45fc-89f5-426f-a5e7-55063432bc30.png)
+   
