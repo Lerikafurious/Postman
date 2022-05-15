@@ -175,9 +175,11 @@ http://162.55.220.72:5005/object_info_4
 18. Передать в окружение переменную name
 
   pm.environment.set("name", query.name);
+
 19. Передать в окружение переменную age
 
   pm.environment.set("age", query.age);
+  
 20. Передать в окружение переменную salary
 
   pm.environment.set("salary", query.salary);
@@ -203,9 +205,11 @@ http://162.55.220.72:5005/user_info_2
 6. Спарсить response body в json.
 
   let jsonData = pm.response.json();
+  
 7. Спарсить request.
 
   let query = request.data
+  
 8. Проверить, что json response имеет параметр start_qa_salary
 
 ![image](https://user-images.githubusercontent.com/83454778/168451552-5bb650e7-d5fc-4a6d-b1a1-fe2f2983c9f5.png)
